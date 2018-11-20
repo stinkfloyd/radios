@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App" >
         MORE COMPONENTS!!!
-        <ItemList />
+        <ItemList items={this.state.items} />
       </div>
     );
   }
