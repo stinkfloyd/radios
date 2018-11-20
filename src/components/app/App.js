@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import './App.css';
 import ItemList from '../item-list/item-list'
+import AddItem from '../add-item/add-item'
 
 class App extends Component {
 
@@ -30,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        MORE COMPONENTS!!!
+        <AddItem />
         <ItemList items={this.state.items} onDeleteItem={this.onDeleteItem} />
       </div>
     );
