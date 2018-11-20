@@ -14,6 +14,10 @@ class AddItem extends Component {
         e.preventDefault()
         const { item, reason } = this.state
         this.props.onAddItem({ item, reason })
+        this.setState({
+            item: '',
+            reason: ''
+        })
     }
 
     onItemChange = (e) => {
