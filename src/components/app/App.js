@@ -29,7 +29,10 @@ class App extends Component {
   }
 
   onAddItem = ({ item, reason }) => {
-    console.log(`Item: ${item} Reason: ${reason}`)
+    const maxId = this.state.items
+      .reduce((acc, el) => Math.max(acc, el.id), 0)
+    const nextMaxId = maxId + 1
+    console.log(`Item: ${item} Reason: ${reason} MaxId: ${nextMaxId}`)
   }
 
   render() {
