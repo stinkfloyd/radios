@@ -13,7 +13,7 @@ class App extends Component {
       items: [
         { id: 0, item: 'Old AM radio.', reason: 'Hear crackles in the summer.' },
         { id: 1, item: 'Shovel', reason: 'Becasue i hate telephone wires.' },
-        { id: 2, item: '2m/70cm dueal band transceiver', reason: 'Because MORE RADIOS!!' }
+        { id: 2, item: '2m/70cm dual band transceiver', reason: 'Because MORE RADIOS!!' }
       ],
     }
   }
@@ -32,7 +32,14 @@ class App extends Component {
     const maxId = this.state.items
       .reduce((acc, el) => Math.max(acc, el.id), 0)
     const nextMaxId = maxId + 1
-    console.log(`Item: ${item} Reason: ${reason} MaxId: ${nextMaxId}`)
+    const newItem = {
+      id: nextMaxId,
+      item,
+      reason
+    }
+    const newItems = [...this.state.items, newItem]
+
+    this.setState({ ...this.state, items: newItems })
   }
 
   render() {
