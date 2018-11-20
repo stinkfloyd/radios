@@ -5,6 +5,7 @@ import './App.css';
 import ItemList from '../item-list/item-list'
 
 class App extends Component {
+
   constructor(props) {
     super(props)
     this.state = {
@@ -15,11 +16,17 @@ class App extends Component {
       ],
     }
   }
+
+  onDeleteItem = ({ id }) => {
+    console.log(`Will delete ${id}`);
+
+  }
+
   render() {
     return (
       <div className="App" >
         MORE COMPONENTS!!!
-        <ItemList items={this.state.items} />
+        <ItemList items={this.state.items} onDeleteItem={this.onDeleteItem} />
       </div>
     );
   }
