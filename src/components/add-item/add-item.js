@@ -13,7 +13,7 @@ class AddItem extends Component {
     onSubmit = (e) => {
         e.preventDefault()
         const { item, reason } = this.state
-        console.log(`Item: ${item} Reason: ${reason}`)
+        this.props.onAddItem({ item, reason })
     }
 
     onItemChange = (e) => {
