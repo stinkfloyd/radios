@@ -18,6 +18,11 @@ class App extends Component {
   }
 
   onDeleteItem = ({ id }) => {
+    const newItems = this.state.items.filter((item) => item.id !== id)
+    this.setState({
+      ...this.state,
+      items: newItems
+    })
     console.log(`Will delete ${id}`);
 
   }
